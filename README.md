@@ -1,8 +1,22 @@
 # Engineering Worklogs
 
-Public, sanitized templates and record excerpts for writing engineering worklogs that are useful for async collaboration, accessibility, and project review.
+Public, sanitized engineering worklog records and templates for async collaboration, accessibility, and project review.
 
-This repository is not my private daily log archive. It is a safe public version of the method: how I structure notes, what I avoid recording, how I turn real work into shareable excerpts, and how I check that a worklog can be shared without leaking private context.
+This repository shows how I turn real work into reviewable written records while removing private context. It is not my full private daily log archive.
+
+## Start Here
+
+The most useful record excerpts are listed first:
+
+- [Record index](records/README.md)
+- [2026-04-24 Public release cleanup and admin workflow](records/2026-04-24-public-release-cleanup.md)
+- [2026-05-08 AI service routing and account workflow](records/2026-05-08-ai-service-routing-workflow.md)
+- [2026-05-11 Cross-device GitHub sync and troubleshooting](records/2026-05-11-cross-device-github-sync.md)
+- [2026-05-24 Remote cleanup and automation failure record](records/2026-05-24-remote-cleanup-automation-record.md)
+- [2026-06-10 Spreadsheet automation and desktop rebuild](records/2026-06-10-spreadsheet-automation-desktop-rebuild.md)
+- [2026-07-01 Document automation and resume delivery](records/2026-07-01-document-automation-resume-delivery.md)
+
+中文说明：这里放的是脱敏后的真实记录摘录。完整私人日志不公开，但这些摘录保留了任务目标、处理过程、验证结果、问题和后续行动，方便招聘方快速判断我的工作方式。
 
 ## Why This Exists
 
@@ -18,10 +32,10 @@ The goal is simple:
 
 ## What This Repository Shows
 
+- A visible set of sanitized real-record excerpts.
 - A reusable daily worklog template.
 - A safety policy for public or forwardable engineering notes.
 - Synthetic example logs that show the format without exposing real projects.
-- Sanitized real-record excerpts that show cross-device sync, backfill review, and GitHub-based record keeping without exposing private context.
 - A PowerShell checker that blocks common secret, credential, URL, IP, and private-context patterns.
 - A GitHub Actions workflow that runs the checker on every push and pull request.
 
@@ -31,6 +45,14 @@ The goal is simple:
 .
 ├── README.md
 ├── TEMPLATE.md
+├── records/
+│   ├── README.md
+│   ├── 2026-04-24-public-release-cleanup.md
+│   ├── 2026-05-08-ai-service-routing-workflow.md
+│   ├── 2026-05-11-cross-device-github-sync.md
+│   ├── 2026-05-24-remote-cleanup-automation-record.md
+│   ├── 2026-06-10-spreadsheet-automation-desktop-rebuild.md
+│   └── 2026-07-01-document-automation-resume-delivery.md
 ├── docs/
 │   ├── POLICY.md
 │   └── examples/
