@@ -8,6 +8,12 @@ Sanitized real-record excerpt from a private daily worklog.
 
 Bring a new machine into a GitHub-based worklog workflow while also handling technical troubleshooting across browser extensions, remote environments, and local storage cleanup.
 
+## Context
+
+The worklog system needed to stay usable across multiple machines instead of depending on one device. The private workflow included cloud machines, Windows machines, and Mac devices. The public record keeps the method: use GitHub as the durable sync layer, confirm access on each machine, document network fallback steps, and review local files before cleanup.
+
+This record also captures a recurring issue with worklog automation: if a review only scans today's file, it can miss work that happened earlier in the week or was added from another machine. A weekly review rule was later added to reduce that risk.
+
 ## Timeline
 
 - `15:51` Converted a successful browser-extension installation process into reusable documentation for future machines.
@@ -25,6 +31,16 @@ Bring a new machine into a GitHub-based worklog workflow while also handling tec
 - Separated machine-specific worklog headings and bottom-of-file sync sections.
 - Reviewed local storage before deletion and kept high-risk personal files untouched.
 
+## Detailed Work Notes
+
+- Turned a one-time browser-extension setup into repeatable documentation.
+- Added the new machine to the GitHub-backed worklog workflow only after the browser confirmation step completed.
+- Used a fallback route for GitHub SSH when the normal route was blocked by the current network.
+- Confirmed that the worklog repository could be read locally before treating the machine as ready.
+- Kept machine-specific headings so records from different devices could be traced without publishing device identifiers.
+- Used a report-first cleanup process: list, review, confirm, then delete only approved files.
+- Added a weekly review rule to scan the current week's records and fill missing items that daily automation missed.
+
 ## Evidence
 
 - GitHub authentication succeeded through the adjusted route.
@@ -40,12 +56,36 @@ Bring a new machine into a GitHub-based worklog workflow while also handling tec
 - Direct file cleanup is risky without a report-first workflow.
 - Worklog automation can miss cross-date work if it only checks files created that day.
 
+## Decisions
+
+- Use GitHub as the shared sync point instead of manually copying notes between machines.
+- Keep local records current on each machine, but publish only sanitized excerpts.
+- Keep the fallback network route documented because it may be needed again.
+- Use a weekly audit step to catch missing records, duplicate fragments, and noisy tool-repair notes.
+- Do not delete local files directly from a rough guess; generate a report first.
+
+## Weekly Review Rule
+
+The weekly review step checks the current week's private records and asks:
+
+- Did any solved task fail to get recorded?
+- Did a machine write a local note that was not synchronized yet?
+- Did a small tool self-repair note create noise that should be filtered out?
+- Did any follow-up need to be added to the next week?
+- Is the public excerpt still safe after redaction?
+
+This is why public records can be more useful than raw notes. Raw notes preserve activity. Reviewed notes preserve decisions, evidence, and next actions.
+
 ## Next Actions
 
 - Keep new-machine setup documented.
 - Keep GitHub access fallback steps visible.
 - Continue using report-first cleanup for local files.
 - Recheck recent worklog dates before assuming records are complete.
+
+## Reviewer Notes
+
+This record is useful for judging written collaboration and operational reliability. It shows a practical method for keeping work records current across devices, handling network friction, and using review rules to catch missing documentation.
 
 ## Private Details Removed
 

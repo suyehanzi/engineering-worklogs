@@ -4,6 +4,17 @@ Public, sanitized engineering worklog records and templates for async collaborat
 
 This repository shows how I turn real work into reviewable written records while removing private context. It is not my full private daily log archive.
 
+## Quick Review
+
+If you are reading this from a resume or interview context, start with these three things:
+
+- [Record index](records/README.md) for the public real-record excerpts.
+- [Evidence map](docs/EVIDENCE-MAP.md) for the skills each record demonstrates.
+- [Public case studies](docs/CASE-STUDIES.md) for detailed project-style examples.
+- [Worklog method](docs/WORKLOG-METHOD.md) for the process I use to turn messy work into reviewable notes.
+
+The repository is written in a public-safe way. It keeps the operating method, decisions, verification style, and follow-up logic, while removing private names, private links, credentials, raw exports, screenshots, and operational identifiers.
+
 ## Start Here
 
 The most useful record excerpts are listed first:
@@ -17,6 +28,28 @@ The most useful record excerpts are listed first:
 - [2026-07-01 Document automation and resume delivery](records/2026-07-01-document-automation-resume-delivery.md)
 
 中文说明：这里放的是脱敏后的真实记录摘录。完整私人日志不公开，但这些摘录保留了任务目标、处理过程、验证结果、问题和后续行动，方便招聘方快速判断我的工作方式。
+
+## What A Reviewer Can Judge
+
+This repository is intended to show practical working ability, not only note-taking. The records demonstrate:
+
+- turning vague tasks into goals, steps, evidence, and next actions
+- maintaining written context across cloud machines, Windows machines, and Mac devices
+- using GitHub as a durable sync and review surface
+- checking public safety before publishing any work note
+- describing technical troubleshooting without exposing private customer context
+- writing handoff material that can be reviewed asynchronously
+- using automation where it reduces repeated work, while recording failure stages when automation breaks
+
+## 中文速览
+
+这个仓库适合招聘方快速看三件事：
+
+- 我如何把复杂任务拆成目标、步骤、证据和后续行动
+- 我如何在多设备、多系统环境下保持工作记录同步
+- 我如何在公开展示和隐私保护之间做安全边界
+
+这里不是完整私人工作日志，也不是客户项目原始材料。它是公开可读版本，保留工作方法和复盘颗粒度，删除敏感信息。
 
 ## Why This Exists
 
@@ -36,6 +69,9 @@ The goal is simple:
 - A reusable daily worklog template.
 - A safety policy for public or forwardable engineering notes.
 - Synthetic example logs that show the format without exposing real projects.
+- A reviewer-facing evidence map that links records to practical skills.
+- Public-safe case studies for browser automation, extension work, support operations, and Apple usability notes.
+- A written method for turning rough task history into clean, public-safe logs.
 - A PowerShell checker that blocks common secret, credential, URL, IP, and private-context patterns.
 - A GitHub Actions workflow that runs the checker on every push and pull request.
 
@@ -55,6 +91,9 @@ The goal is simple:
 │   └── 2026-07-01-document-automation-resume-delivery.md
 ├── docs/
 │   ├── POLICY.md
+│   ├── CASE-STUDIES.md
+│   ├── EVIDENCE-MAP.md
+│   ├── WORKLOG-METHOD.md
 │   └── examples/
 │       ├── 2026-05-cross-device-worklog-sync.md
 │       ├── 2026-06-multi-machine-backfill-review.md
