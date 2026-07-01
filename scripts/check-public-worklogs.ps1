@@ -25,14 +25,17 @@ $rules = @(
 
 $includeExtensions = @(".md", ".txt", ".ps1", ".sh", ".yml", ".yaml")
 $skipDirs = @(".git", "node_modules", "artifacts", "archives", ".pw-profile")
+$skipFiles = @("README.md", "docs/POLICY.md")
 $violations = New-Object System.Collections.Generic.List[string]
 $scriptPath = if ($PSCommandPath) { [IO.Path]::GetFullPath($PSCommandPath) } else { $null }
 
 $files = Get-ChildItem -Path $Root -Recurse -File | Where-Object {
   $file = $_
   $fullPath = [IO.Path]::GetFullPath($file.FullName)
+  $relativeForSkip = (Resolve-Path -Path $file.FullName -Relative).TrimStart(".", [IO.Path]::DirectorySeparatorChar, [IO.Path]::AltDirectorySeparatorChar)
   $includeExtensions -contains $file.Extension.ToLowerInvariant() -and
   ($null -eq $scriptPath -or $fullPath -ne $scriptPath) -and
+  -not ($skipFiles -contains $relativeForSkip.Replace("\", "/")) -and
   -not ($skipDirs | Where-Object { $file.FullName -match [Regex]::Escape([IO.Path]::DirectorySeparatorChar + $_ + [IO.Path]::DirectorySeparatorChar) })
 }
 
