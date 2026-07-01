@@ -22,7 +22,7 @@ The goal is simple:
 - A safety policy for public or forwardable engineering notes.
 - Synthetic example logs that show the format without exposing real projects.
 - A PowerShell checker that blocks common secret, credential, URL, IP, and private-context patterns.
-- A checker that can be run locally or wired into CI later.
+- A GitHub Actions workflow that runs the checker on every push and pull request.
 
 ## Repository Structure
 
@@ -38,6 +38,9 @@ The goal is simple:
 │       └── 2026-06-text-first-handoff.md
 ├── scripts/
 │   └── check-public-worklogs.ps1
+└── .github/
+    └── workflows/
+        └── check.yml
 ```
 
 ## Safety Boundary
@@ -83,6 +86,8 @@ powershell -ExecutionPolicy Bypass -File .\scripts\check-public-worklogs.ps1
 ```
 
 The checker reports file paths and rule names only. It avoids printing the matched line so that accidental secrets are not copied into CI logs.
+
+GitHub Actions runs the same checker automatically for pushes and pull requests.
 
 ## 中文说明
 

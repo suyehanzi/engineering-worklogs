@@ -1,0 +1,16 @@
+name: Check public worklogs
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  safety-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run public worklog safety check
+        shell: pwsh
+        run: ./scripts/check-public-worklogs.ps1
