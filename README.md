@@ -1,8 +1,8 @@
 # Engineering Worklogs
 
-Public, sanitized templates for writing engineering worklogs that are useful for async collaboration, accessibility, and project review.
+Public, sanitized templates and record excerpts for writing engineering worklogs that are useful for async collaboration, accessibility, and project review.
 
-This repository is not my private daily log archive. It is a safe public version of the method: how I structure notes, what I avoid recording, and how I check that a worklog can be shared without leaking private context.
+This repository is not my private daily log archive. It is a safe public version of the method: how I structure notes, what I avoid recording, how I turn real work into shareable excerpts, and how I check that a worklog can be shared without leaking private context.
 
 ## Why This Exists
 
@@ -21,6 +21,7 @@ The goal is simple:
 - A reusable daily worklog template.
 - A safety policy for public or forwardable engineering notes.
 - Synthetic example logs that show the format without exposing real projects.
+- Sanitized real-record excerpts that show cross-device sync, backfill review, and GitHub-based record keeping without exposing private context.
 - A PowerShell checker that blocks common secret, credential, URL, IP, and private-context patterns.
 - A GitHub Actions workflow that runs the checker on every push and pull request.
 
@@ -33,6 +34,8 @@ The goal is simple:
 ├── docs/
 │   ├── POLICY.md
 │   └── examples/
+│       ├── 2026-05-cross-device-worklog-sync.md
+│       ├── 2026-06-multi-machine-backfill-review.md
 │       ├── 2026-06-visual-state-triage.md
 │       ├── 2026-06-automation-export.md
 │       └── 2026-06-text-first-handoff.md
@@ -91,12 +94,13 @@ GitHub Actions runs the same checker automatically for pushes and pull requests.
 
 ## 中文说明
 
-这是一个脱敏后的公开工作日志方法仓库，不是真实私人日志。
+这是一个脱敏后的公开工作日志方法仓库，不是真实私人日志全集。
 
 它展示的是：
 
 - 我如何记录工程目标、时间线、修改内容和验证结果
 - 我如何把上下文写清楚，方便异步协作
+- 我如何把真实工作日志整理成可公开的脱敏摘录
 - 我如何避免把密码、token、客户信息、内部地址、服务器信息和私人路径写进公开材料
 - 我如何用脚本检查日志是否适合公开
 
